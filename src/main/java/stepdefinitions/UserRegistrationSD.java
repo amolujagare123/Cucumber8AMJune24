@@ -18,8 +18,8 @@ public class UserRegistrationSD {
     @Given("I am on user registration page")
     public void userRegistrationPage()
     {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
+       // driver = new ChromeDriver();
+      //  driver.manage().window().maximize();
         driver.get("https://amolujagare.net/contact/");
     }
 

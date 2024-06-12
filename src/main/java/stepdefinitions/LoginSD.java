@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -15,8 +16,7 @@ public class LoginSD {
     public void i_am_on_the_login_page() {
         System.out.println("I am on the login page");
 
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
+
         driver.get("https://stock.scriptinglogic.in/");
     }
     @When("I Enter correct username and password")
@@ -24,7 +24,7 @@ public class LoginSD {
         System.out.println("I Enter correct username and password");
 
         driver.findElement(By.id("login-username")).sendKeys("admin");
-        driver.findElement(By.id("login-password")).sendKeys("admin");
+        driver.findElement(By.id("login-password")).sendKeys("admin1");
     }
     @When("I click on login button")
     public void i_click_on_login_button() {
@@ -65,5 +65,16 @@ public class LoginSD {
     public void iEnterAndAsUsernameAndPassword(String username, String password) {
         driver.findElement(By.id("login-username")).sendKeys(username);
         driver.findElement(By.id("login-password")).sendKeys(password);
+    }
+
+    @Given("I open the browser")
+    public void iOpenTheBrowser() {
+        driver = new ChromeDriver();
+
+    }
+
+    @And("I maximize it")
+    public void iMaximizeIt() {
+        driver.manage().window().maximize();
     }
 }

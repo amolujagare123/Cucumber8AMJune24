@@ -1,10 +1,15 @@
 Feature: all login scenarios
 
+
+  Background: Before any scenario
+    Given I open the browser
+   And I maximize it
+
   @valid @login
   Scenario: To test the functionality of login page for valid input
     Given I am on the login page
   #  When I Enter correct username and password
-    When I Enter "admin" and "admin" as username and password
+    When I Enter "admin" and "admin1" as username and password
     And I click on login button
     Then I should be land on dashboard
 
@@ -31,3 +36,4 @@ Feature: all login scenarios
         | amol ujagare | amol@gmail.com | 54545454 | Pune |
       And I click on submit button
       Then user should be added
+
